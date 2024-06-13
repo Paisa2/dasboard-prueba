@@ -23,10 +23,10 @@ class AdminMiddleware
             {
                 return $next($request);
             }else{
-                return redirect('/home')->with('message', 'Acceso denegado! No eres Administrador ');
+                return redirect('/home')->with('status', 'Acceso denegado! No eres Administrador ');
             }
         }else{
-            return redirect('/login')->with('message', 'Por favor primero logeate ');
+            return redirect('/login')->with('status', 'Por favor primero logeate ');
         }
 
     }
