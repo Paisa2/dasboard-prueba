@@ -26,7 +26,7 @@
 
         <div id="layoutSidenav_content">
             <main>
-                yield('content')
+                @yield('content')
             </main>
             @include('layouts.inc.admin-footer')
         </div>
