@@ -11,13 +11,11 @@ class CategoriaController extends Controller
 {
     public function index()
     {
-
         return view('admin.categoria.index');
     }
 
     public function create()
     {
-
         return view('admin.categoria.create');
     }
 
@@ -46,7 +44,5 @@ class CategoriaController extends Controller
         $categoiria->save();
 
         return redirect('admin/categoria')->with('message', 'Categoria Agregado exitosamente');
-
-
     }
 }
