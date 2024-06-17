@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AdminAuth
+class InicioAuth
 {
     /**
      * Handle an incoming request.
@@ -18,13 +18,12 @@ class AdminAuth
     {
         if(auth()->check()){
             if(auth()->user()->role=='admin'){
-            return $next($request);
-            }
+                return redirect()->to('/admin');
+            }elseif(auth()->user()->role=='usuario'){}
             return redirect()->to('/usuario');
-
-
         }
-        return redirect()->to('/');
 
+
+        return redirect()->to('/');
     }
 }
